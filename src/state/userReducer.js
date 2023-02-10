@@ -1,6 +1,6 @@
-import { SET_USER, SET_LOGGEDSTATUS, SET_CEDULA, SET_PASSWORD, SET_CANDIDATES, SET_CANDIDATE, SET_ESTADO } from "./types";
+import { SET_USER, SET_LOGGEDSTATUS, SET_EMAIL, SET_PASSWORD } from "./types";
 
-export default (state, action) => {
+export default (state, action) =>  {
   const { payload, type } = action;
 
   switch (type) {
@@ -14,30 +14,17 @@ export default (state, action) => {
         ...state,
         loggedStatus: payload,
       };
-    case SET_CEDULA:
+    case SET_EMAIL:
       return {
         ...state,
-        cedula: payload,
+        email: payload,
       };
     case SET_PASSWORD:
       return {
         ...state,
         password: payload,
       };
-    case SET_CANDIDATES:
-      return {
-        ...state,
-        candidates: payload,
-      };
-    case SET_CANDIDATE:
-      return {
-        ...state,
-        candidate: payload,
-      };
-    case SET_ESTADO:
-      return {
-        ...state,
-        estado: payload,
-      };
+    default: 
+      return state;
   }
 };

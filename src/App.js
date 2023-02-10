@@ -2,7 +2,9 @@
 import './App.css';
 import React from 'react';
 
-import Login from './components/Login';
+
+import GestionProyectos from './components-visor/GestionProyectos';
+import Login from './components-visor/Login';
 
 import {
   Routes,
@@ -11,17 +13,20 @@ import {
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 //CONTEXT
-//import UserState from './state/userState';
+import UserState from './state/userState';
 
 
 const App = () => {
   return (
-    <> 
-      <Routes>
-        <Route index path='/' element={<Login/>}/>         
-        <Route exact path='*' element={<Login/>} /> 
-      </Routes>
-      <ToastContainer />  
+    <>
+      <UserState>      
+        <Routes>
+          <Route index path='/' element={<Login/>}/> 
+          <Route index path='/GestionProyectos' element={<GestionProyectos/>}/> 
+          <Route exact path='*' element={<Login/>} /> 
+        </Routes>
+        <ToastContainer />  
+      </UserState>
     </>
   );
 };
