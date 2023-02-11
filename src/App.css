@@ -1,10 +1,7 @@
 
 body {
-  height: 100%;
   display: flex;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
   background-image: url('https://cdn.wallpapersafari.com/36/94/wdEIfK.jpg');
   background-repeat:no-repeat;
   background-size: 100%;
