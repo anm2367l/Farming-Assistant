@@ -3,19 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import './css/Login.css'
 
 //COMPONENTES
-
+import InterfaceProyectos from "./InterfaceProyectos";
 
 //CONTEXT
 import UserContext from "../state/userContext";
 
 
 const Login = () => {
-  const { loggedStatus, estado, user, setLoggedStatus, setPassword, setEmail, password, email } =
+  const { loggedStatus, user, setLoggedStatus, setInitialState, setPassword, setEmail, password, email } =
     useContext(UserContext);
 
   const navigate = useNavigate();
 
-
+  //console.log(user);
 
 
   //Se ejecuta cuando se activa el evento del botton, se aplica al formulario
@@ -43,7 +43,7 @@ const Login = () => {
     if (name === 'password') {
       setPassword(value);
       //console.log(value);
-    }
+    };
     if (name === 'email') {
       setEmail(value);
       //console.log(value);
@@ -52,30 +52,30 @@ const Login = () => {
 
   useEffect(() => {
     if (loggedStatus) {
-      navigate('/GestionProyectos');
-    }
+      user.getCultivos();
+      navigate('/InterfaceProyectos');      
+    } else {
+      setInitialState();
+    };
 
 
-  }, [loggedStatus, estado]);
+  }, [loggedStatus]);
   //container p-3 align-items-center justify-content-center vh-100 vw-100 
   //text-center border bg-light rounded-3
   //modifica los cambios al ingresar los datos cedula y contraseña
   return (
-    <div className="row ms-5 ps-5 pe-5 mt-5 border justify-content-md-center" id="login-div-login">
-      
-      <div className="border col-sm text-center border bg-light rounded-3">
-        <main className="form-signin border  mt-3 mb-1 me-5 ms-5">
+    <div className="row ms-5 ps-5 pe-5 mt-5  justify-content-md-center" id="login-div-login">
+
+      <div className="border col-sm text-center border-2 border-dark bg-light rounded-3">
+        <main className="form-signin  mt-3 mb-1 me-5 ms-5">
           <form onSubmit={handleSumit} className='text-center'>
-            <img
-              className="mb-4 center"
-              src="https://docs.google.com/uc?export=download&id=1K75xLK6LzMSvMvcvDRVtABqRz8AwgEb9"
-              alt=""
-              width="50%"
-              height="50%"
-            />
-            <p className="fs-3 text-start fw-normal mb-1">
-              Farming Assistant <br />
-            </p>
+
+            <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-black text-decoration-none">
+              <img className='rounded-circle w-25'
+                src="https://docs.google.com/uc?export=download&id=1-EC2U4SLh388Lwe6JudAfLpmeJB2Q6JG" alt="" />
+              <span className="fs-4 p-2">Farming Assistant</span>
+            </a>
+            <br />
             <p className="fs-6 text-start fw-light">  Bienvenido, ingrese sus datos</p>
             <div className="form-floating">
               <input

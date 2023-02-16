@@ -2,4 +2,12 @@ export const SET_USER = 'SET_USER'
 export const SET_LOGGEDSTATUS = 'SET_LOGGEDSTATUS'
 export const SET_PASSWORD = 'SET_PASSWORD'
 export const SET_EMAIL = 'SET_EMAIL'
+export const SET_SUB_PAGE = 'SET_SUB_PAGE'
+export const SET_CULTIVO = 'SET_CULTIVO'
+export const SET_NOMBRE = 'SET_NOMBRE'
+export const SET_TIPO_CULTIVO = 'SET_TIPO_CULTIVO'
+export const SET_AREA_SEMBRADA = 'SET_AREA_SEMBRADA'
+export const SET_DESCRIPCION = 'SET_DESCRIPCION'
+
+
 

@@ -1,23 +1,51 @@
 import DescripcionCultivo from "./descripcion_cultivo";
 
+//import { collection, getDocs, query, where } from "firebase/firestore";
+
+import Actividad from './actividad';
+
 class Cultivo extends DescripcionCultivo {
-    constructor(nombre, area_sembrada, area_cosechada, rendimiento, produccion, tipo_cultivo, actividades) {
+    constructor(nombre, area_sembrada, area_cosechada, rendimiento, produccion, tipo_cultivo, descripcion, id) {
         super(nombre, area_sembrada, area_cosechada, rendimiento, produccion)
-        this._tipo_cultivo = tipo_cultivo;        
-        this._actividades = actividades;
+        this._id = id;
+        this._tipo_cultivo = tipo_cultivo;
+        this._actividades = [];
+        this._descripcion = descripcion;
     }
 
-    get tipo_cultivo (){
+    get tipo_cultivo() {
         return this._tipo_cultivo;
+    }    
+    get actividades() {
+        return this._actividades;
     }
+    get id() {
+        return this._id;
+    }
+    get descripcion() {
+        return this._descripcion;
+    }
+
+
     set tipo_cultivo(tipo_cultivo) {
         this._tipo_cultivo = tipo_cultivo;
     }
-    get actividades (){
-        return this._actividades;
+    
+    set descripcion(descripcion) {
+        this._descripcion = descripcion;
     }
-    set actividades(actividades) {
-        this._actividades = actividades;
+    
+    
+
+    añadirActividades (nombre, descripcion, fecha, estado, id_actividad, id_cultivo) {
+        if(id_cultivo === this._id){
+            let actividad = new Actividad(nombre, descripcion, fecha, estado, id_actividad);
+            this._actividades.push(actividad);
+            return(true);
+        } else {
+            return(false);
+        }
+        
     }
 
 

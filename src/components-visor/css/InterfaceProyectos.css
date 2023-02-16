@@ -1,0 +1,32 @@
+#interfaceGestionProyecto-navegacion {
+    min-width: 180px;
+}
+
+#inicio-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+#inicio-interface {
+    background-color: #99e699;
+    min-width: 650px;
+    min-height: 480px;
+}
+
+#inicio-interface-boton-add {
+    width: 50px;
+}
+
+
+#nuevo-cultivo {
+    min-width: 650px;
+    min-height: 480px;
+}
+
+#nuevo-inventario-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -14,24 +14,28 @@ class DescripcionCultivo {
     set nombre(nombre) {
         this._nombre = nombre;
     }
+
     get area_sembrada (){
         return this._area_sembrada;
     }
     set area_sembrada(area_sembrada) {
         this._area_sembrada = area_sembrada;
     }
+
     get area_cosechada (){
         return this._area_cosecha;
     }
     set area_cosechada(area_cosecha) {
         this._area_cosecha = area_cosecha;
     }
+
     get rendimiento (){
         return this._rendimiento;
     }
     set rendimiento(rendimiento) {
         this._rendimiento = rendimiento;
     }
+    
     get produccion (){
         return this._produccion;
     }

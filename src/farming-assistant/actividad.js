@@ -1,12 +1,12 @@
-
+import Costo from './costo';
 
 class Actividad {
-    constructor() {
-        this._id = '';
-        this._nombre = '';
-        this._descripcioin = '';
-        this._fecha = '';
-        this._estado = '';
+    constructor(nombre, descripcion, fecha, estado, id) {
+        this._id = id;
+        this._nombre = nombre;
+        this._descripcion = descripcion;
+        this._fecha = fecha;
+        this._estado = estado;
         this._costos = [];
     }
 
